@@ -3,7 +3,7 @@ module.exports = {
     {
       name: "APP_CREAME",
       script: "node_modules/.bin/http-server",
-      args: "start",
+      args: "build -p 3400",
       env_production_app: {
         NODE_ENV: "production",
         MODE: "production_app",
@@ -11,9 +11,9 @@ module.exports = {
       },
     },
     {
-      name: "APP-PRUEBAS-WEB",
+      name: "APP_CREAME",
       script: "node_modules/.bin/http-server",
-      args: "start",
+      args: "build -p 3400",
       exec_mode: "cluster",
       instances: "max",
 
