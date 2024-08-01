@@ -1,16 +1,28 @@
 module.exports = {
   apps: [
     {
-      name: 'react-app',
-      script: 'node_modules/.bin/http-server',
-      args: 'build -p 3400',
-      env: {
-        NODE_ENV: 'development'
+      name: "APP_CREAME",
+      script: "node_modules/.bin/http-server",
+      args: "start",
+      env_production_app: {
+        NODE_ENV: "production",
+        MODE: "production_app",
+        PORT: 3400,
       },
-      env_production: {
-        NODE_ENV: 'production'
-      }
-    }
-  ]
+    },
+    {
+      name: "APP-PRUEBAS-WEB",
+      script: "node_modules/.bin/http-server",
+      args: "start",
+      exec_mode: "cluster",
+      instances: "max",
+
+      env_pruebas_creame: {
+            NODE_ENV: "production",
+            MODE: "pruebas_app",
+            PORT: 3400,
+        }
+    },
+  ],
 };
 
